@@ -12,12 +12,6 @@ spec:
   project: default
   source:
     chart: airflow
-    helm:
-      values: |
-      createUserJob:
-        useHelmHooks: false
-      migrateDatabaseJob:
-        useHelmHooks: false
     repoURL: https://airflow-helm.github.io/charts 
     targetRevision: 8.6.1
   syncPolicy:
