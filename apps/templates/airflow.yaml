@@ -11,8 +11,15 @@ spec:
     namespace: airflow
   project: default
   source:
-    chart: apache-airflow/airflow
-    repoURL: https://airflow.apache.org 
+    chart: airflow
+    helm:
+      values: |
+      createUserJob:
+        useHelmHooks: false
+      migrateDatabaseJob:
+        useHelmHooks: false
+    repoURL: https://airflow-helm.github.io/charts 
+    targetRevision: 
   syncPolicy:
     automated:
       prune: true
