@@ -14,7 +14,7 @@ spec:
     chart: grafana
     helm:
       values: |
-    repoURL: https://github.com/grafana/helm-charts 
+    repoURL: https://grafana.github.io/helm-charts
     targetRevision: 6.48.0
   syncPolicy:
     automated:
