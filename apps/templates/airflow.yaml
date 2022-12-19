@@ -14,6 +14,10 @@ spec:
     chart: airflow
     repoURL: https://airflow-helm.github.io/charts 
     targetRevision: 8.6.1
+    helm:
+      values: |
+      airflow:
+        executor: KubernetesExecutor
   syncPolicy:
     automated:
       prune: true
