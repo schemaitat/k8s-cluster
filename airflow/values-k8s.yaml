@@ -190,7 +190,7 @@ triggerer:
 ###################################
 flower:
   ## if the airflow flower UI should be deployed
-  enabled: true
+  enabled: false
 
 ###################################
 ## CONFIG | Airflow Logs
