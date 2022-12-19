@@ -15,7 +15,7 @@ spec:
     repoURL: https://github.com/schemaitat/k8s-cluster.git
     targetRevision: HEAD
     directory:
-      recusre: true
+      recurse: true
   syncPolicy:
     automated:
       prune: true
