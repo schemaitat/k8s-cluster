@@ -15,9 +15,8 @@ spec:
     repoURL: https://airflow-helm.github.io/charts 
     targetRevision: 8.6.1
     helm:
-      values: |
-        airflow:
-          executor: KubernetesExecutor
+      valueFiles:
+      - values-airflow.yaml
   syncPolicy:
     automated:
       prune: true
