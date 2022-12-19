@@ -16,8 +16,8 @@ spec:
     targetRevision: 8.6.1
     helm:
       values: |
-      airflow:
-        executor: KubernetesExecutor
+        airflow:
+          executor: KubernetesExecutor
   syncPolicy:
     automated:
       prune: true
