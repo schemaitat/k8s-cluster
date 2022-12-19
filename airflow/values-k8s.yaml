@@ -202,7 +202,7 @@ logs:
   ## configs for the logs PVC
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/monitoring/log-persistence.md
   persistence:
-    enabled: false
+    enabled: true
 
 ###################################
 ## CONFIG | Airflow DAGs
