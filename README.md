@@ -9,4 +9,4 @@ helm install argo-cd charts/argo-cd/ -n argocd
 ```
 kubectl apply -f apps/templates/root.yaml
 ```
-3) Now argo-cd is configured and synchronizes apps. With argo-cd.yaml in apps/templates argo-cd also updates itself on change.
+3) Now argo-cd is configured and synchronizes apps (app of apps). With argo-cd.yaml in apps/templates argo-cd also updates itself on change.

@@ -14,6 +14,9 @@ spec:
     chart: airflow
     repoURL: https://airflow-helm.github.io/charts 
     targetRevision: 8.6.1
+    helm:
+      valueFiles:
+      - values.yaml
   syncPolicy:
     automated:
       prune: true
