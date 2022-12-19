@@ -12,7 +12,9 @@ spec:
     namespace: airflow
   project: default
   source:
-    chart: airflow
+    path: airflow/
+    repoURL: https://github.com/schemaitat/k8s-cluster.git
+    targetRevision: HEAD
     helm:
       valueFiles:
       - values-k8s.yaml
