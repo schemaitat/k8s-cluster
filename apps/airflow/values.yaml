@@ -219,7 +219,19 @@ dags:
   ## configs for the git-sync sidecar
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/dags/load-dag-definitions.md
   gitSync:
-    enabled: false
+    enabled: true
+  
+    repo: "https://github.com/schemaitat/k8s-dev-dags.git"
+    branch: "main"
+    revision: "HEAD"
+    
+    ## the sub-path within your repo where dags are located
+    ## NOTE: airflow will only see dags under this path, but the whole repo will still be synced
+    #repoSubPath: "path/to/dags"
+    
+    ## number of seconds to wait between syncs
+    ## NOTE: also sets `AIRFLOW__SCHEDULER__DAG_DIR_LIST_INTERVAL` unless overwritten in `airflow.config`
+    syncWait: 60
 
 ###################################
 ## CONFIG | Kubernetes Ingress
