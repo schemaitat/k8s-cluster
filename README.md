@@ -3,6 +3,7 @@
 
 1) Install argo-cd with helm.
 ```
+helm dep update charts/argo-cd/ 
 helm install argo-cd charts/argo-cd/ -n argocd
 ```
 2) Create root application (app of apps) with only root.yaml.

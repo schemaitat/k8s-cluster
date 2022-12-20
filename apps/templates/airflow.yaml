@@ -17,7 +17,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-      - values-k8s.yaml
+      - values-k8s-celery.yaml
   syncPolicy:
     automated:
       prune: true
