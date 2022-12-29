@@ -17,7 +17,7 @@ function wait_for_unattached {
     while true; do
         attached_to=$(linode-cli volumes view $volume --json | jq '.[] | .linode_id')
         if [ "$attached_to" == "null" ]; then
-            linoce-cli volumes detach $volume
+            linode-cli volumes detach $volume
             sleep 15
             break
         fi

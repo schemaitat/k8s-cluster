@@ -26,7 +26,7 @@ A typical workflow contains the following three steps:
     ./stop.sh k8s-dev.yaml
 ```
 
-If you are not sure if all (unattached) volumes have been deleted correctly, use `linode-cli volumes ls` to get an overwiev or run 
+If you are not sure if all (unattached) volumes have been deleted correctly, use `linode-cli volumes ls` to get an overwiev and run 
 ```bash
     ./cleanup_volumes.sh
 ```
