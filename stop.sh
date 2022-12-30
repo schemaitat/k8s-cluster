@@ -12,18 +12,21 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-function wait_for_unattached {
+function delete_volume {
     volume=$1
+    set +e
+    log_info "Deleting volume $volume."
     while true; do
-        attached_to=$(linode-cli volumes view $volume --json | jq '.[] | .linode_id')
-        if [ "$attached_to" == "null" ]; then
-            linode-cli volumes detach $volume
-            sleep 15
+        linode-cli volumes rm $volume
+        if [ $? -ne 0 ]; then
+            sleep 5
+        else
+            log_info "Successfully deleted volume $volume."
             break
         fi
-        log_info "Waiting for volume $volume to be deattached from node $node_id."
-        sleep 5
+        log_info "Waiting for volume $volume to be deattached."
     done
+    set -e
 }
 
 CLUSTER_CONFIG_FILE=$1
@@ -58,9 +61,7 @@ for node_id in $LINODES; do
 
     for volume in $volumes; do
         # waiting for volume to be unattahed
-        wait_for_unattached $volume
-        echo "Deleting volume $volume which has been attached to node $node_id."
-        linode-cli volumes delete $volume
+        delete_volume $volume
     done
 done
 
